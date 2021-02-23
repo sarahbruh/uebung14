@@ -1,8 +1,25 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerview.Controller">
+   <children>
+      <Text layoutX="23.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="23.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text layoutX="20.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
+      <TextField fx:id="address" layoutX="172.0" layoutY="89.0" prefHeight="42.0" prefWidth="302.0" promptText="Adress" />
+      <TextField fx:id="phone" layoutX="172.0" layoutY="149.0" prefHeight="42.0" prefWidth="302.0" promptText="Phone" />
+      <Button layoutX="23.0" layoutY="264.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Add" />
+      <Button layoutX="23.0" layoutY="205.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="&lt;&lt;" />
+      <Button layoutX="23.0" layoutY="321.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Load from CSV" />
+      <Button layoutX="173.0" layoutY="264.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Delete" />
+      <Button layoutX="323.0" layoutY="321.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Save to CSV" />
+      <Button layoutX="323.0" layoutY="264.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Save Changes" />
+      <Button layoutX="323.0" layoutY="205.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="&gt;&gt;" />
+      <TextField fx:id="name" layoutX="172.0" layoutY="30.0" prefHeight="42.0" prefWidth="302.0" promptText="Name" />
+      <Text fx:id="page" layoutX="237.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
