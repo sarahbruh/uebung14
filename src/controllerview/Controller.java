@@ -1,9 +1,9 @@
 package controllerview;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import model.Adressbuch;
 
 /**
  * uebung 14
@@ -12,6 +12,8 @@ import javafx.scene.text.Text;
  */
 
 public class Controller {
+
+    private Adressbuch m;
 
     @FXML
     private TextField name;
@@ -26,7 +28,7 @@ public class Controller {
     private Text page;
 
     @FXML
-    void previous() {
+    void Previous() {
 
     }
 
@@ -51,7 +53,7 @@ public class Controller {
     }
 
     @FXML
-    void SaveChanges(ActionEvent event) {
+    void SaveChanges() {
 
     }
 
