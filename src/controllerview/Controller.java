@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Adressbuch;
+import model.Eintrag;
 
 /**
  * uebung 14
@@ -41,7 +42,19 @@ public class Controller {
 
     @FXML
     public void Add() {
+        String nameS = name.getText();
+        String addressS = address.getText();
+        String phoneS = phone.getText();
 
+        Eintrag e = new Eintrag(nameS, addressS, phoneS);
+
+        try {
+            adressbuch.eintrage.add(e);
+            showEntry(index);
+        }
+        catch (Exception ex){
+            System.err.println("Error!");
+        }
     }
 
     @FXML
@@ -51,7 +64,16 @@ public class Controller {
 
     @FXML
     public void Delete() {
-
+        try {
+            adressbuch.eintrage.remove(index);
+            name.clear();
+            address.clear();
+            phone.clear();
+            showEntry(index);
+        }
+        catch(Exception ex){
+            System.err.println("Error! Nothing to delete!");
+        }
     }
 
     @FXML

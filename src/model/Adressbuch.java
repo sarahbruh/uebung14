@@ -15,14 +15,4 @@ public class Adressbuch {
     public Adressbuch() {
         this.eintrage = new ArrayList<>();
     }
-
-    public void lfCSV(){
-        CSV csv = new CSV();
-        eintrage = csv.loadFromFile("Adressbuch.csv");
-    }
-
-    public void stCSV(){
-        CSV csv = new CSV();
-        csv.saveToFile("Adressbuch.csv", eintrage);
-    }
 }
