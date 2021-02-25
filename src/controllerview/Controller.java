@@ -95,7 +95,28 @@ public class Controller {
 
     @FXML
     public void SaveChanges() {
+        try {
+            Eintrag e = adressbuch.eintrage.get(index);
 
+            String nameS = e.getName();
+            String addressS = e.getAddress();
+            String phoneS = e.getPhone();
+            String nameC = name.getText();
+            String addressC = address.getText();
+            String phoneC = phone.getText();
+
+            if (nameS.equals(nameC) && addressS.equals(addressC) && phoneS.equals(phoneC)){
+                System.err.println("Nothing was changed!");
+            }
+            else{
+                e.setName(nameC);
+                e.setAddress(addressC);
+                e.setPhone(phoneC);
+            }
+        }
+        catch (Exception ex){
+            System.err.println("Error! Nothing to save!");
+        }
     }
 
     @FXML
