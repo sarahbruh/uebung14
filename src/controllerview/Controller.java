@@ -59,7 +59,13 @@ public class Controller {
 
     @FXML
     public void LoadFromCSV() {
-
+        try {
+            adressbuch.lfCSV();
+            showEntry(index);
+        }
+        catch(Exception ex){
+            System.err.println("Error!");
+        }
     }
 
     @FXML
@@ -94,7 +100,13 @@ public class Controller {
 
     @FXML
     public void SaveToCSV() {
-
+        try {
+            adressbuch.stCSV();
+            showEntry(index);
+        }
+        catch(Exception ex){
+            System.err.println("Error!");
+        }
     }
 
     private void showEntry (int x){
