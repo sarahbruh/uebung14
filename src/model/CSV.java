@@ -19,7 +19,6 @@ public class CSV {
             bufferedWriter.newLine();
 
             for (Eintrag eintrag:eintrage) {
-                System.out.println(eintrag.toString());
                 bufferedWriter.write(eintrag.getName() + ";" + eintrag.getAddress() + ";" + eintrag.getPhone() + ";");
                 bufferedWriter.newLine();
             }
@@ -35,6 +34,7 @@ public class CSV {
         String line;
         try {
             BufferedReader bufferedReader =new BufferedReader(new FileReader(fileName));
+            bufferedReader.readLine();
             while ((line = bufferedReader.readLine()) != null) {
                 s = line.split(";");
                 Eintrag e = new Eintrag(s[0],s[1],s[2]);

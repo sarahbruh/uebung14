@@ -10,32 +10,19 @@ import java.util.ArrayList;
 
 public class Adressbuch {
 
-    private ArrayList<Eintrag> eintrage;
-
-    private int currentIndex;
-
+    public ArrayList<Eintrag> eintrage = new ArrayList<>();
 
     public Adressbuch() {
         this.eintrage = new ArrayList<>();
-        this.currentIndex = 0;
     }
 
-    public int getCurrentIndex() {
-        return currentIndex;
-    }
-
-    public void setCurrentIndex(int currentIndex) {
-        this.currentIndex = currentIndex;
-    }
-
-    public void saveToCSV(){
+    public void lfCSV(){
         CSV csv = new CSV();
-        csv.saveToFile("Adressbuch.csv",eintrage);
-    }
-
-    public void loadFromCSV(){
-        CSV csv = new CSV();
-        currentIndex = 0;
         eintrage = csv.loadFromFile("Adressbuch.csv");
+    }
+
+    public void stCSV(){
+        CSV csv = new CSV();
+        csv.saveToFile("Adressbuch.csv", eintrage);
     }
 }

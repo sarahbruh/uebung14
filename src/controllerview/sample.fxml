@@ -20,6 +20,6 @@
       <Button layoutX="323.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#SaveChanges" prefHeight="58.0" prefWidth="150.0" text="Save Changes" />
       <Button layoutX="323.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#Next" prefHeight="58.0" prefWidth="150.0" text="&gt;&gt;" />
       <TextField fx:id="name" layoutX="172.0" layoutY="30.0" prefHeight="42.0" prefWidth="302.0" promptText="Name" />
-      <Text fx:id="page" layoutX="237.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="page" layoutX="237.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/0" />
    </children>
 </AnchorPane>

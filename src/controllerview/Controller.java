@@ -13,8 +13,6 @@ import model.Adressbuch;
 
 public class Controller {
 
-    private Adressbuch m;
-
     @FXML
     private TextField name;
 
@@ -27,38 +25,60 @@ public class Controller {
     @FXML
     private Text page;
 
+    private Adressbuch adressbuch = new Adressbuch();
+    int index;
+
     @FXML
-    void Previous() {
+    public void Previous() {
+        try {
+            showEntry(index - 1);
+            index--;
+        }
+        catch(Exception ex){
+            System.err.println("Page not available! This is the last page!");
+        }
+    }
+
+    @FXML
+    public void Add() {
 
     }
 
     @FXML
-    void Add() {
+    public void LoadFromCSV() {
 
     }
 
     @FXML
-    void LoadFromCSV() {
+    public void Delete() {
 
     }
 
     @FXML
-    void Delete() {
+    public void Next() {
+        try {
+            showEntry(index + 1);
+            index++;
+        }
+        catch(Exception ex){
+            System.err.println("Page not available! This is the last page!");
+        }
+    }
+
+    @FXML
+    public void SaveChanges() {
 
     }
 
     @FXML
-    void Next() {
+    public void SaveToCSV() {
 
     }
 
-    @FXML
-    void SaveChanges() {
-
-    }
-
-    @FXML
-    void SaveToCSV() {
-
+    private void showEntry (int x){
+        name.setText(adressbuch.eintrage.get(x).getName());
+        address.setText(adressbuch.eintrage.get(x).getAddress());
+        phone.setText(adressbuch.eintrage.get(x).getPhone());
+        page.setText(x+1+"/"+adressbuch.eintrage.size());
     }
 }
