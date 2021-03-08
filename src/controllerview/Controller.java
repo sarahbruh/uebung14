@@ -1,10 +1,14 @@
 package controllerview;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Adressbuch;
 import model.Eintrag;
+
+import java.util.Collections;
 
 /**
  * uebung 14
@@ -31,6 +35,7 @@ public class Controller {
 
     @FXML
     public void Previous() {
+
         try {
             showEntry(index - 1);
             index--;
@@ -48,6 +53,8 @@ public class Controller {
 
         Eintrag e = new Eintrag(nameS, addressS, phoneS);
 
+        //Collections.sort(adressbuch.eintrage, Eintrag.);
+        //adressbuch.eintrage.sort(Eintrag::compareToIgnoreCase);
         try {
             adressbuch.eintrage.add(e);
             showEntry(index);
@@ -128,6 +135,18 @@ public class Controller {
         catch(Exception ex){
             System.err.println("Error!");
         }
+    }
+
+    @FXML
+    public void onlyNumbers(){
+        phone.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    phone.setText(oldValue);
+                }
+            }
+        });
     }
 
     private void showEntry (int x){
