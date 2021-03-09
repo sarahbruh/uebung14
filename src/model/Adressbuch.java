@@ -16,12 +16,22 @@ public class Adressbuch {
         this.eintrage = new ArrayList<>();
     }
     public void lfCSV(){
-        CSV csv = new CSV();
-        eintrage = csv.loadFromFile("Adressbuch.csv");
+        try{
+            CSV csv = new CSV();
+            eintrage = csv.loadFromFile("Adressbuch.csv");
+        }
+        catch(Exception ex){
+            System.err.println("Error!12");
+        }
     }
 
     public void stCSV(){
-        CSV csv = new CSV();
-        csv.saveToFile("Adressbuch.csv", eintrage);
+        try{
+            CSV csv = new CSV();
+            csv.saveToFile("Adressbuch.csv", eintrage);
+        }
+        catch(Exception ex){
+            System.err.println("Error!");
+        }
     }
 }

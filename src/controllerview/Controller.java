@@ -59,8 +59,12 @@ public class Controller implements Initializable {
         //Collections.sort(adressbuch.eintrage, Eintrag.);
         //adressbuch.eintrage.sort(Eintrag::compareToIgnoreCase);
         try {
-            adressbuch.eintrage.add(e);
-            showEntry(index);
+            if (!nameS.isEmpty() && !addressS.isEmpty() && !phoneS.isEmpty()){
+                adressbuch.eintrage.add(e);
+                showEntry(index);
+            }
+            else
+                System.err.println("Please enter information!");
         }
         catch (Exception ex){
             System.err.println("Error!");
@@ -74,7 +78,7 @@ public class Controller implements Initializable {
             showEntry(index);
         }
         catch(Exception ex){
-            System.err.println("Error!");
+            System.err.println("Error!34");
         }
     }
 
@@ -161,7 +165,12 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadFromCSV();
-        onlyNumbers();
+        try {
+            loadFromCSV();
+            onlyNumbers();
+        }
+        catch (Exception ex){
+            System.err.println("Error!");
+        }
     }
 }
