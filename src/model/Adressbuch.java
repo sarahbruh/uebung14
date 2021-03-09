@@ -23,8 +23,16 @@ public class Adressbuch {
         }
         catch(Exception ex){
             System.err.println();
-
         }
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            public void run() {
+                try {
+                    stCSV();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        }, "Shutdown-thread"));
     }
     final String PATH = System.getProperty("user.dir") + "\\Adressbuch.csv";
     File file = new File(PATH);
@@ -36,7 +44,7 @@ public class Adressbuch {
             Collections.sort(eintrage);
         }
         catch(Exception ex){
-            System.err.println("Error!12");
+            System.err.println("Error!");
         }
     }
 

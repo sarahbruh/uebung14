@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerview.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerview.Controller">
    <children>
       <Text layoutX="23.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
       <Text layoutX="23.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
@@ -14,9 +14,7 @@
       <TextField fx:id="phone" layoutX="172.0" layoutY="149.0" prefHeight="42.0" prefWidth="302.0" promptText="Phone" />
       <Button layoutX="23.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="58.0" prefWidth="150.0" text="Add" />
       <Button layoutX="23.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#previous" prefHeight="58.0" prefWidth="150.0" text="&lt;&lt;" />
-      <Button layoutX="23.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#loadFromCSV" prefHeight="58.0" prefWidth="150.0" text="Load from CSV" />
       <Button layoutX="173.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="58.0" prefWidth="150.0" text="Delete" />
-      <Button layoutX="323.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#saveToCSV" prefHeight="58.0" prefWidth="150.0" text="Save to CSV" />
       <Button layoutX="323.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#saveChanges" prefHeight="58.0" prefWidth="150.0" text="Save Changes" />
       <Button layoutX="323.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#next" prefHeight="58.0" prefWidth="150.0" text="&gt;&gt;" />
       <TextField fx:id="name" layoutX="172.0" layoutY="30.0" prefHeight="42.0" prefWidth="302.0" promptText="Name" />

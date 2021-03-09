@@ -77,22 +77,21 @@ public class Controller implements Initializable {
             showEntry(index);
         }
         catch(Exception ex){
-            System.err.println("Error!34");
+            System.err.println("Error!");
         }
     }
 
     @FXML
     public void delete() {
-        //try {
+        try {
             adressbuch.eintrage.remove(index);
             name.clear();
             address.clear();
             phone.clear();
-            showEntry(0);
-        /*}
+            showEntry(index);
+        }
         catch(Exception ex){
-            System.err.println("Error! Nothing to delete!");
-        }*/
+        }
     }
 
     @FXML
@@ -129,17 +128,6 @@ public class Controller implements Initializable {
         }
         catch (Exception ex){
             System.err.println("Error! Nothing to save!");
-        }
-    }
-
-    @FXML
-    public void saveToCSV() {
-        try {
-            adressbuch.stCSV();
-            showEntry(index);
-        }
-        catch(Exception ex){
-            System.err.println("Error!");
         }
     }
 
