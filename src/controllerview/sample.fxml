@@ -12,15 +12,14 @@
       <Text layoutX="20.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" />
       <TextField fx:id="address" layoutX="172.0" layoutY="89.0" prefHeight="42.0" prefWidth="302.0" promptText="Adress" />
       <TextField fx:id="phone" layoutX="172.0" layoutY="149.0" prefHeight="42.0" prefWidth="302.0" promptText="Phone" />
-      <Button layoutX="23.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#Add" prefHeight="58.0" prefWidth="150.0" text="Add" />
-      <Button layoutX="23.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#Previous" prefHeight="58.0" prefWidth="150.0" text="&lt;&lt;" />
-      <Button layoutX="23.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#LoadFromCSV" prefHeight="58.0" prefWidth="150.0" text="Load from CSV" />
-      <Button layoutX="173.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#Delete" prefHeight="58.0" prefWidth="150.0" text="Delete" />
-      <Button layoutX="323.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#SaveToCSV" prefHeight="58.0" prefWidth="150.0" text="Save to CSV" />
-      <Button layoutX="323.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#SaveChanges" prefHeight="58.0" prefWidth="150.0" text="Save Changes" />
-      <Button layoutX="323.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#Next" prefHeight="58.0" prefWidth="150.0" text="&gt;&gt;" />
+      <Button layoutX="23.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#add" prefHeight="58.0" prefWidth="150.0" text="Add" />
+      <Button layoutX="23.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#previous" prefHeight="58.0" prefWidth="150.0" text="&lt;&lt;" />
+      <Button layoutX="23.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#loadFromCSV" prefHeight="58.0" prefWidth="150.0" text="Load from CSV" />
+      <Button layoutX="173.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="58.0" prefWidth="150.0" text="Delete" />
+      <Button layoutX="323.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#saveToCSV" prefHeight="58.0" prefWidth="150.0" text="Save to CSV" />
+      <Button layoutX="323.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#saveChanges" prefHeight="58.0" prefWidth="150.0" text="Save Changes" />
+      <Button layoutX="323.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#next" prefHeight="58.0" prefWidth="150.0" text="&gt;&gt;" />
       <TextField fx:id="name" layoutX="172.0" layoutY="30.0" prefHeight="42.0" prefWidth="302.0" promptText="Name" />
       <Text fx:id="page" layoutX="237.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0/0" />
-      <Button layoutX="323.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#onlyNumbers" prefHeight="0.0" prefWidth="150.0" text="to only write numbers" />
    </children>
 </AnchorPane>

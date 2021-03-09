@@ -3,12 +3,15 @@ package controllerview;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Adressbuch;
 import model.Eintrag;
 
-import java.util.Collections;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * uebung 14
@@ -16,7 +19,7 @@ import java.util.Collections;
  * @version 12.0.1, 23.02.2021
  */
 
-public class Controller {
+public class Controller implements Initializable {
 
     @FXML
     private TextField name;
@@ -34,7 +37,7 @@ public class Controller {
     int index;
 
     @FXML
-    public void Previous() {
+    public void previous() {
 
         try {
             showEntry(index - 1);
@@ -46,7 +49,7 @@ public class Controller {
     }
 
     @FXML
-    public void Add() {
+    public void add() {
         String nameS = name.getText();
         String addressS = address.getText();
         String phoneS = phone.getText();
@@ -65,7 +68,7 @@ public class Controller {
     }
 
     @FXML
-    public void LoadFromCSV() {
+    public void loadFromCSV() {
         try {
             adressbuch.lfCSV();
             showEntry(index);
@@ -76,7 +79,7 @@ public class Controller {
     }
 
     @FXML
-    public void Delete() {
+    public void delete() {
         try {
             adressbuch.eintrage.remove(index);
             name.clear();
@@ -90,7 +93,7 @@ public class Controller {
     }
 
     @FXML
-    public void Next() {
+    public void next() {
         try {
             showEntry(index + 1);
             index++;
@@ -101,7 +104,7 @@ public class Controller {
     }
 
     @FXML
-    public void SaveChanges() {
+    public void saveChanges() {
         try {
             Eintrag e = adressbuch.eintrage.get(index);
 
@@ -127,7 +130,7 @@ public class Controller {
     }
 
     @FXML
-    public void SaveToCSV() {
+    public void saveToCSV() {
         try {
             adressbuch.stCSV();
             showEntry(index);
@@ -154,5 +157,11 @@ public class Controller {
         address.setText(adressbuch.eintrage.get(x).getAddress());
         phone.setText(adressbuch.eintrage.get(x).getPhone());
         page.setText(x+1+"/"+adressbuch.eintrage.size());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadFromCSV();
+        onlyNumbers();
     }
 }
