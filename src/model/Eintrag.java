@@ -1,12 +1,12 @@
 package model;
 
 /**
- * uebung 14
+ * uebung 14 & 15
  * @author Brunmayr Sarah
  * @version 12.0.1, 23.02.2021
  */
 
-public class Eintrag {
+public class Eintrag implements Comparable<Eintrag>{
 
     private String name;
     private String address;
@@ -17,7 +17,16 @@ public class Eintrag {
         this.address = address;
         this.phone = phone;
     }
-
+    @Override
+    public int compareTo(Eintrag eintrag){
+        int erg;
+        if ((erg = this.name.compareTo((eintrag.getName()))) == 0){
+            if ((erg = this.phone.compareTo(eintrag.getPhone())) == 0){
+                return this.address.compareTo(eintrag.getAddress());
+            }
+        }
+        return erg;
+    }
     public String getName() {
         return name;
     }

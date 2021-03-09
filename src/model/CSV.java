@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * uebung 14
+ * uebung 14 & 15
  * @author Brunmayr Sarah
  * @version 12.0.1, 23.02.2021
  */

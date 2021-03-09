@@ -4,17 +4,17 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Adressbuch;
 import model.Eintrag;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 /**
- * uebung 14
+ * uebung 14 & 15
  * @author Brunmayr Sarah
  * @version 12.0.1, 23.02.2021
  */
@@ -56,15 +56,14 @@ public class Controller implements Initializable {
 
         Eintrag e = new Eintrag(nameS, addressS, phoneS);
 
-        //Collections.sort(adressbuch.eintrage, Eintrag.);
-        //adressbuch.eintrage.sort(Eintrag::compareToIgnoreCase);
         try {
-            if (!nameS.isEmpty() && !addressS.isEmpty() && !phoneS.isEmpty()){
+            if (!nameS.isEmpty() && !addressS.isEmpty() && !phoneS.isEmpty()){ //Eingabeüberprüfung
                 adressbuch.eintrage.add(e);
+                Collections.sort(adressbuch.eintrage);
                 showEntry(index);
             }
             else
-                System.err.println("Please enter information!");
+                System.err.println("Please enter data!");
         }
         catch (Exception ex){
             System.err.println("Error!");
@@ -84,16 +83,16 @@ public class Controller implements Initializable {
 
     @FXML
     public void delete() {
-        try {
+        //try {
             adressbuch.eintrage.remove(index);
             name.clear();
             address.clear();
             phone.clear();
-            showEntry(index);
-        }
+            showEntry(0);
+        /*}
         catch(Exception ex){
             System.err.println("Error! Nothing to delete!");
-        }
+        }*/
     }
 
     @FXML
@@ -157,10 +156,18 @@ public class Controller implements Initializable {
     }
 
     private void showEntry (int x){
-        name.setText(adressbuch.eintrage.get(x).getName());
-        address.setText(adressbuch.eintrage.get(x).getAddress());
-        phone.setText(adressbuch.eintrage.get(x).getPhone());
-        page.setText(x+1+"/"+adressbuch.eintrage.size());
+        if (adressbuch.eintrage.size() >= 1){
+            name.setText(adressbuch.eintrage.get(x).getName());
+            address.setText(adressbuch.eintrage.get(x).getAddress());
+            phone.setText(adressbuch.eintrage.get(x).getPhone());
+            page.setText(x+1+"/"+adressbuch.eintrage.size());
+        }
+        else {
+            name.setText("");
+            address.setText("");
+            phone.setText("");
+            page.setText("0/0");
+        }
     }
 
     @Override
